@@ -32,7 +32,7 @@ class VisitFormRequest extends FormRequest
     public function messages()  //custom error messeges
     {
         return [
-            'name.required' => "Скажи своє ім'я"
+            'name.required' => "Tell me your name, please"
         ];
     }
 }

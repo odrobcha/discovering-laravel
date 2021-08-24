@@ -1,5 +1,5 @@
 <div class="bg-gray-100 dark:bg-gray-900">
-<ul class="margin0">
+<ul class="margin0 menu">
     <li>
         <a href="/">Hello</a>
     </li>
