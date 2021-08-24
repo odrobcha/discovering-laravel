@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/hello', [Controller::class, 'hello']);
+
+Route::get('/', [Controller::class, 'hello']);
+
+Route::get('/museums', [Controller::class, 'museums'])->name('museums');
+Route::get('/cinemas', [Controller::class, 'cinemas'])->name('cinemas');
+Route::get('/visit', [Controller::class, 'visit'])->name('visit');
+Route::post('/form', [Controller::class, 'handleForm']);
+
 
 
