@@ -68,6 +68,7 @@ class Controller extends BaseController
 
         $pony->name = $request->name;
         $pony->save();
+        return redirect()->route('ponies');
     }
 
 
