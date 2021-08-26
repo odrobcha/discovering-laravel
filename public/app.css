@@ -8,7 +8,7 @@ body {
 .menu{
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(10, auto);
     grid-auto-flow: row;
     list-style: none;
     padding-top: 20px;

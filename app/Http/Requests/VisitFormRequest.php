@@ -29,7 +29,7 @@ class VisitFormRequest extends FormRequest
         ];
     }
 
-    public function messages()  //custom error messeges
+    public function messages()  //custom error messages
     {
         return [
             'name.required' => "Tell me your name, please"

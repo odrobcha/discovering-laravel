@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\VisitFormRequest;
+use App\Http\Requests\PonyFormRequest;
+use App\Models\Pony;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -31,6 +33,27 @@ class Controller extends BaseController
 
         return view('cinemas', ['header'=>$header]);
     }
+    public function ponies()
+    {
+        $header = 'The list of ponies';
+        $ponies = Pony::get();
+        //$ponies = Pony::all();
+       // $ponies_name = Pony::pluck('name');
+        $pony_names = Pony::pluck('name', 'id'); //to get also id
+
+       // foreach ($ponies as $pony ) {
+        //    $pony->name;
+        //array_push($ponies_name, $pony->name)
+       // }
+       // dd($ponies);
+       // dd($ponies_name);
+
+        return view('ponies', ['header'=>$header, 'pony_names' => $pony_names]);
+    }
+    public function add()
+    {
+        return view('add');
+    }
 
     public function visit()
     {
@@ -38,6 +61,15 @@ class Controller extends BaseController
 
         return view('visit', ['header'=>$header]);
     }
+
+    public function handlePonyForm(PonyFormRequest $request)
+    {
+        $pony = new Pony;
+
+        $pony->name = $request->name;
+        $pony->save();
+    }
+
 
     public function handleForm(VisitFormRequest $request)
     {

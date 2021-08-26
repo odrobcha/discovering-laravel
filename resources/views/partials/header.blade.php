@@ -10,7 +10,14 @@
         <a href="{{ route('cinemas') }}">Cinemas</a>
     </li>
     <li>
-        <a href="visit">I want to visit</a>
+        <a href="{{ route('visit') }}">I want to visit</a>
     </li>
+    <li>
+        <a href="{{ route('ponies') }}">Ponies</a>
+    </li>
+    <li>
+        <a href="{{ route('add') }}">Add Ponies</a>
+    </li>
+
 </ul>
 </div>
